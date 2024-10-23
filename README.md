@@ -1,22 +1,11 @@
 # react-native-beacon-monitoring
 
-detect beacons on region enter/exit and provide according callbacks
+Detect beacons on region enter/exit and provide according callbacks
 
 ## Installation
 
 ```sh
 npm install react-native-beacon-monitoring
-```
-
-## Usage
-
-
-```js
-import { multiply } from 'react-native-beacon-monitoring';
-
-// ...
-
-const result = await multiply(3, 7);
 ```
 
 
