@@ -1,17 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-beacon-monitoring';
+import { startMonitoring, stopMonitoring } from './BeaconMonitoring';
 
 export default function App() {
-  const [result, setResult] = useState<number | undefined>();
-
   useEffect(() => {
-    multiply(3, 7).then(setResult);
+    const setupMonitoring = async () => {
+      startMonitoring('0', '0');
+    };
+
+    setupMonitoring().catch(console.error);
+
+    return () => {
+      stopMonitoring();
+    };
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Monitoring Example App</Text>
     </View>
   );
 }

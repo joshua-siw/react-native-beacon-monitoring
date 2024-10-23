@@ -13,7 +13,7 @@ class BeaconMonitoring: RCTEventEmitter, CLLocationManagerDelegate {
     locationManager?.delegate = self
   }
 
-    @objc func startMonitoring(uuid: String, identifier: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
+    @objc func startMonitoring(_ uuid: String, identifier: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
         guard let beaconUUID = UUID(uuidString: uuid) else {
           reject("BeaconMonitoringError", "Invalid UUID", nil)
           return

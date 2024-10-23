@@ -3,7 +3,8 @@
 
 @interface RCT_EXTERN_MODULE(BeaconMonitoring, RCTEventEmitter)
 
-RCT_EXTERN_METHOD(startMonitoring:(NSString *)uuid
+RCT_EXTERN_METHOD(startMonitoring:
+                  (NSString *)uuid
                   identifier:(NSString *)identifier
                   resolve:(RCTPromiseResolveBlock)resolve
                   reject:(RCTPromiseRejectBlock)reject)
